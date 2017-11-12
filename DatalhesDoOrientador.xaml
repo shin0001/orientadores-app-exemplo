@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="Orientadores_PPgSI.DatalhesDoOrientador"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Orientadores_PPgSI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <local:BarraTitulo Grid.Row="0" />
+
+        <ScrollViewer Grid.Row="1">
+            <StackPanel>
+
+                <TextBlock x:Name="NomeDoOrientador" Style="{ThemeResource HeaderTextBlockStyle}" Margin="5,0,0,5" />
+                
+                <Image x:Name="FotoDoOrientador" MaxHeight="200" />
+
+                <TextBlock Text="Formação do Orientador" Style="{ThemeResource TitleTextBlockStyle}" Margin="5,5,0,2" />
+                <ItemsControl x:Name="FormacaoDoOrientador">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Style="{ThemeResource BodyTextBlockStyle}" Margin="5,0,0,3" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <TextBlock Text="Áreas de pesquisa" Style="{ThemeResource TitleTextBlockStyle}" Margin="5,5,0,2" />
+                <ItemsControl x:Name="PesquisaDoOrientador">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" Style="{ThemeResource BodyTextBlockStyle}" Margin="5,0,0,3" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <CommandBar Grid.Row="2" Background="{StaticResource CorBarraComando}">
+            <AppBarButton x:Name="LattesDoOrientador" Label="Currículo Lattes" Icon="Page" Click="IrParaOLattes" />
+            <AppBarButton x:Name="EmailDoOrientador" Label="Enviar email" Icon="Mail" Click="MandarEmail" />
+        </CommandBar>
+    </Grid>
+</Page>

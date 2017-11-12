@@ -1,0 +1,14 @@
+﻿<Application
+    x:Class="Orientadores_PPgSI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Orientadores_PPgSI"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <x:String x:Key="NomeDoApp">PPgSI - Orientadores</x:String>
+        <SolidColorBrush x:Key="CorBarraTitulo" Color="#0099B9"/>
+        <SolidColorBrush x:Key="CorBarraComando" Color="#FA9E0D"/>
+    </Application.Resources>
+    
+</Application>
